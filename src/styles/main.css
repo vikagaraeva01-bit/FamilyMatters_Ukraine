@@ -284,7 +284,7 @@ input:focus-visible {
 .story-screen {
   display: flex;
   flex-direction: column;
-  padding: max(1rem, env(safe-area-inset-top)) 1rem max(1.1rem, env(safe-area-inset-bottom));
+  padding: max(0.55rem, env(safe-area-inset-top)) 1rem max(0.85rem, env(safe-area-inset-bottom));
   background:
     radial-gradient(circle at 50% 0%, rgba(212, 177, 108, 0.14), transparent 32%),
     #050913;
@@ -311,7 +311,7 @@ input:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 3.25rem;
+  min-height: 2.75rem;
 }
 
 .icon-button {
@@ -338,20 +338,20 @@ input:focus-visible {
 
 .story-content {
   display: flex;
-  min-height: calc(100svh - 5.4rem);
+  min-height: calc(100svh - 4.3rem);
   flex-direction: column;
-  padding-top: 0.7rem;
+  padding-top: 0.2rem;
 }
 
 .country-title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
   overflow-wrap: anywhere;
 }
 
 .photo-shell {
   position: relative;
   width: 100%;
-  aspect-ratio: 0.86;
+  height: clamp(14rem, 34svh, 18.75rem);
   flex: 0 0 auto;
   margin: 0;
   overflow: hidden;
@@ -397,15 +397,15 @@ input:focus-visible {
 }
 
 .story-note {
-  margin: 1rem 0;
+  margin: 0.75rem 0;
   color: rgba(245, 241, 231, 0.83);
-  font: 600 1.25rem/1.36 var(--serif);
+  font: 600 1.12rem/1.3 var(--serif);
 }
 
 .audio-player {
   display: grid;
-  gap: 0.8rem;
-  padding: 0.95rem;
+  gap: 0.65rem;
+  padding: 0.78rem;
   border: 1px solid rgba(245, 241, 231, 0.14);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
@@ -461,9 +461,33 @@ input:focus-visible {
 }
 
 .story-action {
-  margin-top: auto;
+  margin-top: 0.85rem;
 }
 
+
+@media (max-height: 760px) {
+  .screen-heading,
+  .country-title {
+    font-size: 3.2rem;
+  }
+
+  .photo-shell {
+    height: clamp(12rem, 30svh, 15.5rem);
+  }
+
+  .story-note {
+    margin: 0.58rem 0;
+    font-size: 1.02rem;
+  }
+
+  .audio-play {
+    height: 2.55rem;
+  }
+
+  .primary-button {
+    min-height: 3.25rem;
+  }
+}
 @media (orientation: landscape) and (max-height: 600px) {
   body::before {
     display: grid;
