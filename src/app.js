@@ -16,7 +16,6 @@ function setView(view) {
     story: () =>
       renderStory({
         story,
-        onBack: () => setView('landing'),
         onContinue: () => setView('ending'),
       }),
     ending: () =>

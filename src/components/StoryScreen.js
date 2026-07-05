@@ -1,7 +1,7 @@
 import { createAudioPlayer } from './audioPlayer.js';
 import { button, el } from '../utils/dom.js';
 
-export function renderStory({ story, onBack, onContinue }) {
+export function renderStory({ story, onContinue }) {
   const image = el('img', {
     className: 'story-photo',
     src: story.photo,
@@ -22,15 +22,6 @@ export function renderStory({ story, onBack, onContinue }) {
 
   return el('main', { className: 'screen story-screen', 'aria-labelledby': 'story-title' }, [
     el('div', { className: 'story-veil', 'aria-hidden': 'true', style: { '--accent': story.accent } }),
-    el('header', { className: 'story-header' }, [
-      el('button', {
-        type: 'button',
-        className: 'icon-button',
-        'aria-label': 'Back',
-        onClick: onBack,
-        text: '←',
-      }),
-    ]),
     el('section', { className: 'story-content' }, [
       el('p', { className: 'kicker', text: 'Before you scratch this country' }),
       el('h2', { id: 'story-title', className: 'country-title', text: story.country }),
